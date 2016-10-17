@@ -58,7 +58,7 @@ function checkUserInput(){
 
 	var responseToUser = "";
 
-        if( episodeName == check){
+        if( simplifyString(episodeName) == simplifyString(check)){
         responseToUser = "Correct!";
         }
         else {responseToUser = "Wrong! The correct answer is: " + episodeName;}
@@ -137,4 +137,19 @@ showEpisodeName = document.createTextNode(episodeName);
 function displayEpisode(){
 	var showName = document.getElementById("epName");
 	showName.innerHTML = episodeName;
+}
+
+function simplifyString(stringInput){
+	
+	var str = stringInput;
+	
+	str = str.replace(/\s+/g, '');
+	str = str.replace(":", "");
+	str = str.replace(".", "");
+	str = str.replace("-", "");
+	str = str.replace(")", "");
+	str = str.replace("(", "");
+	str = str.replace(",", "");
+	str = str.toUpperCase();
+	return str;
 }
