@@ -11,6 +11,8 @@ var s8Titles = ["", "Treehouse of Horror VII","You Only Move Twice","The Homer T
 var s9Titles = ["", "The City of New York vs. Homer Simpson","The Principal and the Pauper","Lisa's Sax","Treehouse of Horror VIII","The Cartridge Family","Bart Star","The Two Mrs. Nahasapeemapetilons","Lisa the Skeptic","Realty Bites","Miracle on Evergreen Terrace","All Singing, All Dancing","Bart Carny","The Joy of Sect","Das Bus","The Last Temptation of Krust","Dumbbell Indemnity","Lisa the Simpson","This Little Wiggy","Simpson Tide","The Trouble with Trillions","Girly Edition","Trash of the Titans","King of the Hill","Lost Our Lisa","Natural Born Kissers"];
 var s10Titles = ["", "Lard of the Dance","The Wizard of Evergreen Terrace","Bart the Mother","Treehouse of Horror IX","When You Dish Upon a Star","D'oh-in' in the Wind","Lisa Gets an \"A\"","Homer Simpson in: \"Kidney Trouble\"","Mayored to the Mob","Viva Ned Flanders","Wild Barts Can't Be Broken","Sunday, Cruddy Sunday","Homer to the Max","I'm with Cupid","Marge Simpson in: \"Screaming Yellow Honkers\"","Make Room for Lisa","Maximum Homerdrive","Simpsons Bible Stories","Mom and Pop Art","The Old Man and the \"C\" Student","Monty Can't Buy Me Love","They Saved Lisa's Brain","Thirty Minutes over Tokyo"];
 
+var s8e9AltTitle = "The Mysterious Voyage of Homer";
+var s8e9AltTitle2 = "El Viaje Misterioso de Nuestro Jomer";
 
 var season = 0;
 var episode = 0; 
@@ -22,6 +24,8 @@ var episodeName = "";
 var showEpisodeName = document.createTextNode("");
 var giveAnswer = document.createTextNode("");
 
+
+var score = 0;
 
 
 
@@ -35,7 +39,7 @@ var shot =  document.createElement("IMG");
 	document.body.appendChild(shot);
 
 
-
+	
 
 
 	displayEpisode();
@@ -58,8 +62,9 @@ function checkUserInput(){
 
 	var responseToUser = "";
 
-        if( simplifyString(episodeName) == simplifyString(check)){
+        if((simplifyString(episodeName) || simplifyString(s8e9AltTitle) || simplifyString(s8e9AltTitle2))== (simplifyString(check))){
         responseToUser = "Correct!";
+		incrementScore();
         }
         else {responseToUser = "Wrong! The correct answer is: " + episodeName;}
 	
@@ -147,9 +152,19 @@ function simplifyString(stringInput){
 	str = str.replace(":", "");
 	str = str.replace(".", "");
 	str = str.replace("-", "");
-	str = str.replace(")", "");
-	str = str.replace("(", "");
+	str = str.replace(/[{()}]/g, '');
 	str = str.replace(",", "");
+	str = str.replace(/['"]+/g, '');
+	str = str.replace(/[&]+/g, 'and');
+	str = str.replace(/[1]+/g, 'one');
+	str = str.replace(/[2] +/g, 'two');
 	str = str.toUpperCase();
 	return str;
+}
+
+function incrementScore(){
+		score++;
+	var displayScore = document.getElementById("playerScore");
+		displayScore.innerHTML = "Score: " + score.toString();
+	
 }
