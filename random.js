@@ -19,7 +19,9 @@ var shotNum = 0;
 var imagePath = "";
 var episodeName = "";
 
-var showEpisodeName;
+var showEpisodeName = document.createTextNode("");
+var giveAnswer = document.createTextNode("");
+
 
 
 
@@ -29,14 +31,15 @@ var showEpisodeName;
 
 var shot =  document.createElement("IMG");
 	getRandomImage();
+	
 	document.body.appendChild(shot);
 
 
 
 
 
-
-document.body.appendChild(showEpisodeName);
+	displayEpisode();
+//document.body.appendChild(showEpisodeName);
 
 
 function getRandomIntInclusive(min, max){
@@ -64,8 +67,11 @@ function checkUserInput(){
 	
 	//responseToUser = check;
 	
-	var giveAnswer = document.createTextNode(responseToUser);
-        document.body.appendChild(giveAnswer);
+		var showResponse = document.getElementById("guessResult");
+		showResponse.innerHTML = responseToUser;
+	
+		//giveAnswer = document.createTextNode(responseToUser);
+        //document.body.appendChild(giveAnswer);
 
 
 
@@ -125,4 +131,10 @@ function getRandomImage(){
 }
 showEpisodeName = document.createTextNode(episodeName);
 
+
+}
+
+function displayEpisode(){
+	var showName = document.getElementById("epName");
+	showName.innerHTML = episodeName;
 }
