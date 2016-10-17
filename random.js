@@ -61,7 +61,7 @@ function checkUserInput(){
         if( episodeName == check){
         responseToUser = "Correct!";
         }
-        else {responseToUser = "Wrong!";}
+        else {responseToUser = "Wrong! The correct answer is: " + episodeNameepisodeName;}
 	
 
 	
