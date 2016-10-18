@@ -26,6 +26,7 @@ var giveAnswer = document.createTextNode("");
 
 
 var score = 0;
+var isAnswered = false;
 
 
 
@@ -64,16 +65,19 @@ function checkUserInput(){
 
         if((simplifyString(episodeName) || simplifyString(s8e9AltTitle) || simplifyString(s8e9AltTitle2))== (simplifyString(check))){
         responseToUser = "Correct!";
-		incrementScore();
+		if(!isAnswered){
+			incrementScore();
+		}
+		
         }
         else {responseToUser = "Wrong! The correct answer is: " + episodeName;}
 	
-
+		isAnswered = true;
 	
 	//responseToUser = check;
-	
-		var showResponse = document.getElementById("guessResult");
-		showResponse.innerHTML = responseToUser;
+		displaySiteResponse(responseToUser);
+		
+		
 	
 		//giveAnswer = document.createTextNode(responseToUser);
         //document.body.appendChild(giveAnswer);
@@ -84,6 +88,7 @@ function checkUserInput(){
 
 function getRandomImage(){
 	
+	isAnswered = false;
 	 season = getRandomIntInclusive(1,10);
 	 episode = getRandomIntInclusive(1, episodeNumbers[season]);
 	 shotNum = getRandomIntInclusive(2, 8);
@@ -166,5 +171,12 @@ function incrementScore(){
 		score++;
 	var displayScore = document.getElementById("playerScore");
 		displayScore.innerHTML = "Score: " + score.toString();
+	
+}
+
+
+function displaySiteResponse(message){
+	var showResponse = document.getElementById("guessResult");
+		showResponse.innerHTML = message;
 	
 }
