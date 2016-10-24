@@ -30,8 +30,12 @@ var isAnswered = false;
 
 
 
+
+
 //var sE = "Season " + season.toString() + " Episode " + episode.toString();
 //alert(sE);
+
+
 
 
 var shot =  document.createElement("IMG");
@@ -88,6 +92,8 @@ function checkUserInput(){
 
 function getRandomImage(){
 
+
+	//alert("HELLO");
 	isAnswered = false;
 	 season = getRandomIntInclusive(1,10);
 	 episode = getRandomIntInclusive(1, episodeNumbers[season]);
@@ -179,4 +185,17 @@ function displaySiteResponse(message){
 	var showResponse = document.getElementById("guessResult");
 		showResponse.innerHTML = message;
 
+}
+
+
+
+function fileExists(url) {
+    if(url){
+        var req = new XMLHttpRequest();
+        req.open('GET', url, false);
+        req.send();
+        return req.status==200;
+    } else {
+        return false;
+    }
 }
