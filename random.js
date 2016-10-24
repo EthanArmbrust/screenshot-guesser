@@ -15,7 +15,7 @@ var s8e9AltTitle = "The Mysterious Voyage of Homer";
 var s8e9AltTitle2 = "El Viaje Misterioso de Nuestro Jomer";
 
 var season = 0;
-var episode = 0; 
+var episode = 0;
 var shotNum = 0;
 
 var imagePath = "";
@@ -36,11 +36,11 @@ var isAnswered = false;
 
 var shot =  document.createElement("IMG");
 	getRandomImage();
-	
+
 	document.body.appendChild(shot);
 
 
-	
+
 
 
 	displayEpisode();
@@ -63,22 +63,22 @@ function checkUserInput(){
 
 	var responseToUser = "";
 
-        if((simplifyString(episodeName) || simplifyString(s8e9AltTitle) || simplifyString(s8e9AltTitle2))== (simplifyString(check))){
+        if((simplifyString(episodeName) == simplifyString(check)) || (simplifyString(s8e9AltTitle) == simplifyString(check)) || (simplifyString(s8e9AltTitle2) == simplifyString(check))){
         responseToUser = "Correct!";
 		if(!isAnswered){
 			incrementScore();
 		}
-		
+
         }
         else {responseToUser = "Wrong! The correct answer is: " + episodeName;}
-	
+
 		isAnswered = true;
-	
+
 	//responseToUser = check;
 		displaySiteResponse(responseToUser);
-		
-		
-	
+
+
+
 		//giveAnswer = document.createTextNode(responseToUser);
         //document.body.appendChild(giveAnswer);
 
@@ -87,55 +87,55 @@ function checkUserInput(){
 }
 
 function getRandomImage(){
-	
+
 	isAnswered = false;
 	 season = getRandomIntInclusive(1,10);
 	 episode = getRandomIntInclusive(1, episodeNumbers[season]);
-	 shotNum = getRandomIntInclusive(2, 8);
+	 shotNum = getRandomIntInclusive(1, 39);
 
 	imagePath = "./img/Season " + season;
-	
+
 	if(season < 10){
 	imagePath += "/S0" + season.toString() + "E";}
 	else imagePath += "/S" + season.toString() + "E";
-	
+
 	if(episode < 10){
-	imagePath += "0" + episode.toString() + "/shot_0" + shotNum.toString() + ".jpg";
+	imagePath += "0" + episode.toString() + "/shot_" + shotNum.toString() + ".jpg";
 	}
-	else imagePath += episode.toString() + "/shot_0" + shotNum.toString() + ".jpg";
-	
+	else imagePath += episode.toString() + "/shot_" + shotNum.toString() + ".jpg";
+
 	shot.setAttribute("src", imagePath);
-	
-	
+
+
 	switch(season){
 	case 1:
 	episodeName = s1Titles[episode];
 	break;
- 	case 2: 
-        episodeName = s2Titles[episode];	
+ 	case 2:
+        episodeName = s2Titles[episode];
 	break;
-	case 3: 
+	case 3:
         episodeName = s3Titles[episode];
 	break;
-	case 4: 
+	case 4:
         episodeName = s4Titles[episode];
 	break;
-	case 5: 
+	case 5:
         episodeName = s5Titles[episode];
 	break;
-	case 6: 
+	case 6:
         episodeName = s6Titles[episode];
 	break;
-	case 7: 
+	case 7:
         episodeName = s7Titles[episode];
 	break;
-	case 8: 
+	case 8:
         episodeName = s8Titles[episode];
 	break;
-	case 9: 
+	case 9:
         episodeName = s9Titles[episode];
 	break;
-	case 10: 
+	case 10:
         episodeName = s10Titles[episode];
 	break;
 }
@@ -150,15 +150,15 @@ function displayEpisode(){
 }
 
 function simplifyString(stringInput){
-	
+
 	var str = stringInput;
-	
+
 	str = str.replace(/\s+/g, '');
 	str = str.replace(":", "");
 	str = str.replace(".", "");
 	str = str.replace("-", "");
 	str = str.replace(/[{()}]/g, '');
-	str = str.replace(",", "");
+	str = str.replace(/[,]+/g, "");
 	str = str.replace(/['"]+/g, '');
 	str = str.replace(/[&]+/g, 'and');
 	str = str.replace(/[1]+/g, 'one');
@@ -171,12 +171,12 @@ function incrementScore(){
 		score++;
 	var displayScore = document.getElementById("playerScore");
 		displayScore.innerHTML = "Score: " + score.toString();
-	
+
 }
 
 
 function displaySiteResponse(message){
 	var showResponse = document.getElementById("guessResult");
 		showResponse.innerHTML = message;
-	
+
 }
