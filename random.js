@@ -43,7 +43,7 @@ var shot =  document.createElement("IMG");
 
 	document.body.appendChild(shot);
 
-
+shot.onerror = function(){getRandomImage();}
 
 
 
@@ -96,7 +96,9 @@ function getRandomImage(){
 	//alert("HELLO");
 	isAnswered = false;
 	 season = getRandomIntInclusive(1,10);
+	 //season = getRandomIntInclusive(8,8);
 	 episode = getRandomIntInclusive(1, episodeNumbers[season]);
+	 //episode = getRandomIntInclusive(11,12);
 	 shotNum = getRandomIntInclusive(1, 39);
 
 	imagePath = "./img/Season " + season;
