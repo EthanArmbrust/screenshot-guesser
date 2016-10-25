@@ -84,7 +84,7 @@ function checkUserInput(){
 
 
 		//giveAnswer = document.createTextNode(responseToUser);
-        //document.body.appendChild(giveAnswer);
+        //docum ent.body.appendChild(giveAnswer);
 
 
 
@@ -96,9 +96,9 @@ function getRandomImage(){
 	//alert("HELLO");
 	isAnswered = false;
 	 season = getRandomIntInclusive(1,10);
-	 //season = getRandomIntInclusive(8,8);
+	 //season = getRandomIntInclusive(7,7);
 	 episode = getRandomIntInclusive(1, episodeNumbers[season]);
-	 //episode = getRandomIntInclusive(11,12);
+	 //episode = getRandomIntInclusive(10,11);
 	 shotNum = getRandomIntInclusive(1, 39);
 
 	imagePath = "./img/Season " + season;
@@ -149,6 +149,9 @@ function getRandomImage(){
 }
 showEpisodeName = document.createTextNode(episodeName);
 
+if((season == 4 && episode == 18) || (season == 6 && episode == 3) || (season == 7 && episode == 10) || (season == 9 && episode == 11)){
+	getRandomImage();
+}
 
 }
 
