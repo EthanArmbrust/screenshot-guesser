@@ -68,6 +68,7 @@ function checkUserInput(){
 	var responseToUser = "";
 		
 		if(isAnswered){
+			document.getElementById("userEpisode").value = "";
 			displaySiteResponse("");
 			toggleText("userInputButton");
 			shower();
