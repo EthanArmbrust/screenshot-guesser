@@ -245,3 +245,9 @@ function shower(){
 	var link = document.getElementById('skipButton');
 	link.style.visibility = 'visible';
 }
+
+function enterCheck(){
+	if(event.keyCode == 13){
+		checkUserInput();
+	}
+}
