@@ -47,7 +47,7 @@ shot.onerror = function(){getRandomImage();}
 
 
 
-	displayEpisode();
+	//displayEpisode();
 //document.body.appendChild(showEpisodeName);
 
 
@@ -66,12 +66,22 @@ function checkUserInput(){
         //document.write(check);
 
 	var responseToUser = "";
-
+		
+		if(isAnswered){
+			displaySiteResponse("");
+			toggleText("userInputButton");
+			shower();
+			getRandomImage();
+			
+		}
+		else{
+	
         if((simplifyString(episodeName) == simplifyString(check)) || (simplifyString(s8e9AltTitle) == simplifyString(check)) || (simplifyString(s8e9AltTitle2) == simplifyString(check))){
         responseToUser = "Correct!";
 		if(!isAnswered){
 			incrementScore();
 		}
+		
 
         }
         else {responseToUser = "Wrong! The correct answer is: " + episodeName;}
@@ -80,19 +90,19 @@ function checkUserInput(){
 
 	//responseToUser = check;
 		displaySiteResponse(responseToUser);
-
-
+		toggleText("userInputButton");
+		hider();
 
 		//giveAnswer = document.createTextNode(responseToUser);
         //docum ent.body.appendChild(giveAnswer);
 
-
-
+	
+		}
 }
 
 function getRandomImage(){
-
-
+	
+	
 	//alert("HELLO");
 	isAnswered = false;
 	 season = getRandomIntInclusive(1,10);
@@ -194,13 +204,43 @@ function displaySiteResponse(message){
 
 
 
-function fileExists(url) {
-    if(url){
-        var req = new XMLHttpRequest();
-        req.open('GET', url, false);
-        req.send();
-        return req.status==200;
-    } else {
-        return false;
-    }
+
+function toggleText(button_id) 
+{
+   var el = document.getElementById(button_id);
+   if (el.firstChild.data == "Enter") 
+   {
+       el.firstChild.data = "Next";
+   }
+   else 
+   {
+     el.firstChild.data = "Enter";
+   }
+}
+
+function display(action, id)
+{
+if (action == 'show')
+{
+document.getElementById("explanation"+id).style.display = "block";
+document.getElementById("link"+id).href= "javascript:display('hide', "+id+")";
+document.getElementById("link"+id).innerHTML = "Close";
+}
+
+if (action == 'hide')
+{
+document.getElementById("explanation"+id).style.display = "none";
+document.getElementById("link"+id).href= "javascript:display('show', "+id+")";
+document.getElementById("link"+id).innerHTML = "Explain";
+}
+}
+
+function hider(){
+	var link = document.getElementById('skipButton');
+	link.style.visibility = 'hidden';
+}
+
+function shower(){
+	var link = document.getElementById('skipButton');
+	link.style.visibility = 'visible';
 }
