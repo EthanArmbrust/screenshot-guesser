@@ -29,7 +29,7 @@ var score = 0;
 var isAnswered = false;
 
 
-
+var skips = 10;
 
 
 //var sE = "Season " + season.toString() + " Episode " + episode.toString();
@@ -249,5 +249,17 @@ function shower(){
 function enterCheck(){
 	if(event.keyCode == 13){
 		checkUserInput();
+	}
+}
+
+function skipper(){
+	if(skips > 0){
+		skips--;
+		var el = document.getElementById("skipButton");
+		el.firstChild.data = "Skip (" + skips + ")";
+		if(skips == 0){
+			document.getElementById("skipButton").disabled = true;
+		}
+		getRandomImage();
 	}
 }
