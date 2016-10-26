@@ -26,6 +26,7 @@ var giveAnswer = document.createTextNode("");
 
 
 var score = 0;
+var antiScore = 0;
 var isAnswered = false;
 
 
@@ -71,7 +72,8 @@ function checkUserInput(){
 			document.getElementById("userEpisode").value = "";
 			displaySiteResponse("");
 			toggleText("userInputButton");
-			shower();
+			if(skips > 0){
+			document.getElementById("skipButton").disabled = false;}
 			getRandomImage();
 			
 		}
@@ -85,14 +87,24 @@ function checkUserInput(){
 		
 
         }
-        else {responseToUser = "Wrong! The correct answer is: " + episodeName;}
+        else {
+			responseToUser = "Wrong! The correct answer is: " + episodeName;
+			antiScore++;
+			
+			
+		}
 
 		isAnswered = true;
 
 	//responseToUser = check;
 		displaySiteResponse(responseToUser);
 		toggleText("userInputButton");
-		hider();
+		//hider();
+		document.getElementById("skipButton").disabled = true;
+		
+		if(antiScore == 3){
+			document.write("GAME OVER.  Score: " + score);
+		}
 
 		//giveAnswer = document.createTextNode(responseToUser);
         //docum ent.body.appendChild(giveAnswer);
