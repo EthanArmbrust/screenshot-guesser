@@ -2,11 +2,23 @@
 
 <html>
 	<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
 		<h1>The Simpsons Screenshot Guesser</h1>
 	</head>
 
 
 	<body>
+		<div class="container-responsive">
+			<div class="row">
+				<div class="col-xs-2"></div>
+				<div class="col-xs-8">
+					<p id="imageLocation"></p>
+				</div>
+				<div class="col-xs-2"></div>
+			</div>
+		</div>
+		
 		<script src="random.js"></script>
 		
 		<p>
@@ -15,7 +27,9 @@
 
 		</p>
 		
-		<button id="skipButton" onclick="skipper()">Skip (10)</button>
+		<p>
+			<button id="skipButton" onclick="skipper()">Skip (10)</button>
+		</p>
 		<p id="epName"></p>
 		<p id="guessResult"></p>
 		

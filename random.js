@@ -42,7 +42,7 @@ var skips = 10;
 var shot =  document.createElement("IMG");
 	getRandomImage();
 
-	document.body.appendChild(shot);
+	document.getElementById("imageLocation").appendChild(shot);
 
 shot.onerror = function(){getRandomImage();}
 
@@ -136,6 +136,7 @@ function getRandomImage(){
 	else imagePath += episode.toString() + "/shot_" + shotNum.toString() + ".jpg";
 
 	shot.setAttribute("src", imagePath);
+	//document.getElementById("screenshotImage").src= imagePath;
 
 
 	switch(season){
@@ -231,22 +232,7 @@ function toggleText(button_id)
    }
 }
 
-function display(action, id)
-{
-if (action == 'show')
-{
-document.getElementById("explanation"+id).style.display = "block";
-document.getElementById("link"+id).href= "javascript:display('hide', "+id+")";
-document.getElementById("link"+id).innerHTML = "Close";
-}
 
-if (action == 'hide')
-{
-document.getElementById("explanation"+id).style.display = "none";
-document.getElementById("link"+id).href= "javascript:display('show', "+id+")";
-document.getElementById("link"+id).innerHTML = "Explain";
-}
-}
 
 function hider(){
 	var link = document.getElementById('skipButton');
