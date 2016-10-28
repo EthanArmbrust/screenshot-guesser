@@ -5,8 +5,50 @@ h1{
 img {
     display: block;
     margin: 0 auto;
+	width: 50%;
+	height: auto;
 }
+
 
 p {
 	text-align: center;
+}
+.search-box {
+border: 1px solid #FBE301;
+	color: black;
+    font-size: 14pt;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	padding: 0 12px;
+	height: 42px;
+	width: 600px;
+	border-radius: 42px;
+	outline: none;
+	
+}
+.text-box{
+	text-align: center;
+	align-items: flex-start;
+}
+
+.enter-button{
+	color: black;
+	font-size: 14pt;
+	
+}
+.player-score{
+	font-size:20pt;
+}
+
+.skip-button{
+	color: black;
+	font-size: 14pt;
+}
+
+
+body{
+	color: white;
+	background: linear-gradient(#13212A, #16586F);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
