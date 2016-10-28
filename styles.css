@@ -22,12 +22,13 @@ border: 1px solid #FBE301;
 	-webkit-box-sizing: border-box;
 	padding: 0 12px;
 	height: 42px;
-	width: 600px;
+	width: 80%;
 	border-radius: 42px;
 	outline: none;
 
 }
 .text-box{
+	padding-top: 200px;
 	text-align: center;
 	align-items: flex-start;
 }
@@ -37,8 +38,13 @@ border: 1px solid #FBE301;
 	font-size: 14pt;
 
 }
+.score-text{
+font-size: 40pt;
+
+}
+
 .player-score{
-	font-size:20pt;
+	font-size:32pt;
 }
 
 .skip-button{

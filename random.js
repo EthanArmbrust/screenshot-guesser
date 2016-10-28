@@ -207,7 +207,7 @@ function simplifyString(stringInput){
 function incrementScore(){
 		score++;
 	var displayScore = document.getElementById("playerScore");
-		displayScore.innerHTML = "Score: " + score.toString();
+		displayScore.innerHTML = score.toString();
 
 }
 
