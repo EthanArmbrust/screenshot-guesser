@@ -3,9 +3,10 @@ h1{
 }
 
 img {
+		border:	5px solid white;
     display: block;
     margin: 0 auto;
-	width: 50%;
+	width: 100	%;
 	height: auto;
 }
 
@@ -24,7 +25,7 @@ border: 1px solid #FBE301;
 	width: 600px;
 	border-radius: 42px;
 	outline: none;
-	
+
 }
 .text-box{
 	text-align: center;
@@ -34,7 +35,7 @@ border: 1px solid #FBE301;
 .enter-button{
 	color: black;
 	font-size: 14pt;
-	
+
 }
 .player-score{
 	font-size:20pt;
@@ -43,6 +44,12 @@ border: 1px solid #FBE301;
 .skip-button{
 	color: black;
 	font-size: 14pt;
+}
+
+.guess-result{
+	text-align: center;
+	font-size: 24pt;
+
 }
 
 

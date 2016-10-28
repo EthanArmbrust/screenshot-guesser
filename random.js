@@ -67,7 +67,7 @@ function checkUserInput(){
         //document.write(check);
 
 	var responseToUser = "";
-		
+
 		if(isAnswered){
 			document.getElementById("userEpisode").value = "";
 			displaySiteResponse("");
@@ -75,23 +75,25 @@ function checkUserInput(){
 			if(skips > 0){
 			document.getElementById("skipButton").disabled = false;}
 			getRandomImage();
-			
+
 		}
 		else{
-	
+
         if((simplifyString(episodeName) == simplifyString(check)) || (simplifyString(s8e9AltTitle) == simplifyString(check)) || (simplifyString(s8e9AltTitle2) == simplifyString(check))){
         responseToUser = "Correct!";
+				document.getElementById("guessResult").style.color = "#96ffae";
 		if(!isAnswered){
 			incrementScore();
 		}
-		
+
 
         }
         else {
 			responseToUser = "Wrong! The correct answer is: " + episodeName;
+			document.getElementById("guessResult").style.color = "#ff5151";
 			antiScore++;
-			
-			
+
+
 		}
 
 		isAnswered = true;
@@ -101,7 +103,7 @@ function checkUserInput(){
 		toggleText("userInputButton");
 		//hider();
 		document.getElementById("skipButton").disabled = true;
-		
+
 		if(antiScore == 3){
 			document.write("GAME OVER.  Score: " + score);
 		}
@@ -109,13 +111,13 @@ function checkUserInput(){
 		//giveAnswer = document.createTextNode(responseToUser);
         //docum ent.body.appendChild(giveAnswer);
 
-	
+
 		}
 }
 
 function getRandomImage(){
-	
-	
+
+
 	//alert("HELLO");
 	isAnswered = false;
 	 season = getRandomIntInclusive(1,10);
@@ -219,14 +221,14 @@ function displaySiteResponse(message){
 
 
 
-function toggleText(button_id) 
+function toggleText(button_id)
 {
    var el = document.getElementById(button_id);
-   if (el.firstChild.data == "Enter") 
+   if (el.firstChild.data == "Enter")
    {
        el.firstChild.data = "Next";
    }
-   else 
+   else
    {
      el.firstChild.data = "Enter";
    }
