@@ -22,6 +22,7 @@ var shotNum = 0;
 
 var imagePath = "";
 var episodeName = "";
+var wrongAnswers = "";
 
 var showEpisodeName = document.createTextNode("");
 var giveAnswer = document.createTextNode("");
@@ -98,6 +99,10 @@ function checkUserInput(){
 			responseToUser = "Wrong! The correct answer is: " + episodeName;
 			document.getElementById("guessResult").style.color = "#db5755";
 			antiScore++;
+			wrongAnswers = wrongAnswers + "X ";
+			document.getElementById("wrongAnswer").innerHTML = wrongAnswers;
+			document.getElementById("changeYoPadding").style.paddingTop = 0;
+			document.getElementById("wrongAnswer").style.paddingBottom = "53px";
 
 
 		}
@@ -132,6 +137,8 @@ function getRandomImage(){
 	 episode = getRandomIntInclusive(1, episodeNumbers[season]);
 	 //episode = getRandomIntInclusive(10,11);
 	 shotNum = getRandomIntInclusive(1, 39);
+
+	 var coinFlip = getRandomIntInclusive(0,1);
 
 	imagePath = "./img/Season " + season;
 
@@ -270,10 +277,20 @@ function skipper(){
 		getRandomImage();
 	}
 }
-function toggleHint(){
+function toggleHint(coinFlip){
 	if(hintOn == false){
-	document.getElementById("seasonHintText").innerHTML = "  Season: " + season.toString();
 
+		if(season == 1){
+			coinFlip = 0;
+		}
+		if(season == 10){
+			coinFlip = 1;
+		}
+
+	if(coinFlip == 0){
+	document.getElementById("seasonHintText").innerHTML = "  Season: " + season.toString() +  " or " + (season+1).toString();
+	}
+	else document.getElementById("seasonHintText").innerHTML = "  Season: " + (season-1).toString() +  " or " + season.toString();
 }
 	else document.getElementById("seasonHintText").innerHTML = "";
 

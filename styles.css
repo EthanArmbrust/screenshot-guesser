@@ -62,10 +62,15 @@ border: 1px solid #FBE301;
 	color: black;
 }
 
+.wrong-answer{
+	font-size: 72pt;
+	color: #db5755;
+	padding-bottom: 0px;
+}
 
 .guess-result{
 	text-align: center;
-	font-size: 24pt;
+	font-size: 32pt;
 
 
 }
