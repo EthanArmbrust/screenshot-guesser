@@ -30,7 +30,7 @@ var giveAnswer = document.createTextNode("");
 var score = 0;
 var antiScore = 0;
 var isAnswered = false;
-
+var hintOn = false;
 
 var skips = 10;
 
@@ -69,6 +69,9 @@ function checkUserInput(){
         //document.write(check);
 
 	var responseToUser = "";
+	if(hintOn){
+		toggleHint();
+	}
 
 		if(isAnswered){
 			document.getElementById("userEpisode").value = "";
@@ -76,6 +79,7 @@ function checkUserInput(){
 			toggleText("userInputButton");
 			if(skips > 0){
 			document.getElementById("skipButton").disabled = false;}
+			document.getElementById("seasonHint").disabled = false;
 			getRandomImage();
 
 		}
@@ -92,7 +96,7 @@ function checkUserInput(){
         }
         else {
 			responseToUser = "Wrong! The correct answer is: " + episodeName;
-			document.getElementById("guessResult").style.color = "#ff5151";
+			document.getElementById("guessResult").style.color = "#db5755";
 			antiScore++;
 
 
@@ -105,6 +109,7 @@ function checkUserInput(){
 		toggleText("userInputButton");
 		//hider();
 		document.getElementById("skipButton").disabled = true;
+		document.getElementById("seasonHint").disabled = true;
 
 		if(antiScore == 3){
 			document.write("GAME OVER.  Score: " + score);
@@ -183,10 +188,7 @@ if((season == 4 && episode == 18) || (season == 6 && episode == 3) || (season ==
 
 }
 
-function displayEpisode(){
-	var showName = document.getElementById("epName");
-	showName.innerHTML = episodeName;
-}
+
 
 function simplifyString(stringInput){
 
@@ -255,6 +257,9 @@ function enterCheck(){
 }
 
 function skipper(){
+	if(hintOn){
+		toggleHint();
+	}
 	if(skips > 0){
 		skips--;
 		var el = document.getElementById("skipButton");
@@ -264,4 +269,14 @@ function skipper(){
 		}
 		getRandomImage();
 	}
+}
+function toggleHint(){
+	if(hintOn == false){
+	document.getElementById("seasonHintText").innerHTML = "  Season: " + season.toString();
+
+}
+	else document.getElementById("seasonHintText").innerHTML = "";
+
+	hintOn = !hintOn;
+
 }

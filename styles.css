@@ -6,6 +6,7 @@ img {
 		border:	5px solid white;
     display: block;
     margin: 0 auto;
+		padding-left: 0px;
 	width: 100%;
 	height: auto;
 }
@@ -17,12 +18,12 @@ p {
 .search-box {
 border: 1px solid #FBE301;
 	color: black;
-    font-size: 14pt;
+    font-size: 18pt;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	padding: 0 12px;
 	height: 42px;
-	width: 80%;
+	width: 100%;
 	border-radius: 42px;
 	outline: none;
 
@@ -34,8 +35,10 @@ border: 1px solid #FBE301;
 }
 
 .enter-button{
+	padding: 10px 60px;
 	color: black;
-	font-size: 14pt;
+
+	float: right;
 
 }
 .score-text{
@@ -51,8 +54,14 @@ border: 1px solid #FBE301;
 
 .skip-button{
 	color: black;
-	font-size: 14pt;
+
+
+	float: left;
 }
+.hint-button{
+	color: black;
+}
+
 
 .guess-result{
 	text-align: center;
@@ -60,10 +69,31 @@ border: 1px solid #FBE301;
 
 
 }
+
+
 .image-location{
 	padding-top: 50px;
 }
 
+.season-text{
+	padding-left: 15px;
+	font-size: 20pt;
+}
+
+button {
+    padding: 10px 50px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20pt;
+		color: black;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+		background-color: #f7f031;
+}
+
+button:disabled {
+    background-color: #AAAAAA;
+}
 
 
 body{

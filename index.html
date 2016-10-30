@@ -30,17 +30,30 @@
 		<div class = "col-xs-12 col-md-6">
 		<p class="score-text">Score</p>
 		<p id="playerScore" class="player-score">0</p>
+
+		<div class = "container-responsive">
+		<div class = "row">
+		<div class = "col-xs-1"></div>
+		<div class = "col-xs-10">
+
+
 		<p class="text-box">
 
 					<input type="text" class="search-box" id="userEpisode" onkeydown="enterCheck();" placeholder="Episode Name">
-					<button id="userInputButton" class="enter-button" onclick="checkUserInput()" >Enter</button>
+
 
 		</p>
 
 		<p>
 			<button id="skipButton" onclick="skipper()" class="skip-button">Skip (10)</button>
+			<button id="seasonHint" onclick="toggleHint()"  class="hint-button">Hint</button>
+			<button id="userInputButton" class="enter-button" onclick="checkUserInput()" >Enter</button>
+			<p id = "seasonHintText" class = "season-text"></p>
 		</p>
-		<p id="epName"></p>
+	</div>
+	<div class = "col-xs-1"></div>
+	</div>
+	</div>
 
 
 
