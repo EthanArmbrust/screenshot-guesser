@@ -14,6 +14,8 @@ var s10Titles = ["", "Lard of the Dance","The Wizard of Evergreen Terrace","Bart
 var s8e9AltTitle = "The Mysterious Voyage of Homer";
 var s8e9AltTitle2 = "El Viaje Misterioso de Nuestro Jomer";
 
+var s5e10AltTitle = "$prinfield";
+
 var season = 0;
 var episode = 0;
 var shotNum = 0;
@@ -79,7 +81,7 @@ function checkUserInput(){
 		}
 		else{
 
-        if((simplifyString(episodeName) == simplifyString(check)) || (simplifyString(s8e9AltTitle) == simplifyString(check)) || (simplifyString(s8e9AltTitle2) == simplifyString(check))){
+        if((simplifyString(episodeName) == simplifyString(check)) || (simplifyString(s8e9AltTitle) == simplifyString(check)) || (simplifyString(s8e9AltTitle2) == simplifyString(check)) || (simplifyString(s5e10AltTitle) == simplifyString(check))){
         responseToUser = "Correct!";
 				document.getElementById("guessResult").style.color = "#96ffae";
 		if(!isAnswered){
