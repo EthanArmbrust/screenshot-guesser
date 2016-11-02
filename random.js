@@ -86,7 +86,7 @@ function checkUserInput(){
 		}
 		else{
 
-        if((simplifyString(episodeName) == simplifyString(check)) || (simplifyString(s8e9AltTitle) == simplifyString(check)) || (simplifyString(s8e9AltTitle2) == simplifyString(check)) || (simplifyString(s5e10AltTitle) == simplifyString(check))){
+        if((simplifyString(episodeName) == simplifyString(check)) || (simplifyString(s8e9AltTitle) == simplifyString(check) && season == 8 && episode == 9) || (simplifyString(s8e9AltTitle2) == simplifyString(check) && season == 8 && episode == 9) || (simplifyString(s5e10AltTitle) == simplifyString(check) && season == 5 && episode == 10)){
         responseToUser = "Correct!";
 				document.getElementById("guessResult").style.color = "#96ffae";
 		if(!isAnswered){
