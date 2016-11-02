@@ -257,11 +257,17 @@ function shower(){
 	link.style.visibility = 'visible';
 }
 
-function enterCheck(){
-	if(event.keyCode == 13){
+function enterCheck(e){
+	evt = e || window.event;
+	if(evt.keyCode == 13){
 		checkUserInput();
 	}
 }
+function checkKey(e) {
+   // compliant with ie6        
+       alert(evt.keyCode+' Pressed');
+}
+
 
 function skipper(){
 	if(hintOn){
