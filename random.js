@@ -212,8 +212,8 @@ function simplifyString(stringInput){
 	str = str.replace(/[1]+/g, 'one');
 	str = str.replace(/[2] +/g, 'two');
 	str = str.replace(/[?] +/g, '');
-      //str = str.replace("the", "");
 	str = str.toUpperCase();
+	str = str.replace("THE", "");
 	return str;
 }
 
