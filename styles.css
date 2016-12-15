@@ -107,6 +107,6 @@ body{
 	color: black;
 	/*background: linear-gradient(#13212A, #16586F); */
 	background-image: url(Background.jpg);
-	background-repeat: no-repeat;
+	/*background-repeat: no-repeat; */
 	background-attachment: fixed;
 }
