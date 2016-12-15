@@ -84,6 +84,7 @@ border: 1px solid #FBE301;
 .season-text{
 	padding-left: 15px;
 	font-size: 20pt;
+
 }
 
 button {
@@ -103,7 +104,7 @@ button:disabled {
 
 
 body{
-	color: white;
+	color: black;
 	/*background: linear-gradient(#13212A, #16586F); */
 	background-image: url(Background.jpg);
 	background-repeat: no-repeat;
