@@ -88,7 +88,7 @@ function checkUserInput(){
 
         if((simplifyString(episodeName) == simplifyString(check)) || (simplifyString(s8e9AltTitle) == simplifyString(check) && season == 8 && episode == 9) || (simplifyString(s8e9AltTitle2) == simplifyString(check) && season == 8 && episode == 9) || (simplifyString(s5e10AltTitle) == simplifyString(check) && season == 5 && episode == 10)){
         responseToUser = "Correct!";
-				document.getElementById("guessResult").style.color = "#96ffae";
+				document.getElementById("guessResult").style.color = "#0b842e";
 		if(!isAnswered){
 			incrementScore();
 		}
