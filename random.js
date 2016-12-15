@@ -14,7 +14,7 @@ var s10Titles = ["", "Lard of the Dance","The Wizard of Evergreen Terrace","Bart
 var s8e9AltTitle = "The Mysterious Voyage of Homer";
 var s8e9AltTitle2 = "El Viaje Misterioso de Nuestro Jomer";
 
-var s5e10AltTitle = "$prinfield";
+var s5e10AltTitle = "$pringfield";
 
 var season = 0;
 var episode = 0;
@@ -266,7 +266,7 @@ function enterCheck(e){
 	}
 }
 function checkKey(e) {
-   // compliant with ie6        
+   // compliant with ie6
        alert(evt.keyCode+' Pressed');
 }
 
