@@ -48,9 +48,13 @@
 		</p>
 
 		<p>
-			<button id="skipButton" onclick="skipper()" class="skip-button">Skip (10)</button>
-			<button id="seasonHint" onclick="toggleHint()"  class="hint-button">Hint</button>
-			<button id="userInputButton" class="enter-button" onclick="checkUserInput()" >Enter</button>
+			<div class = "container-responsive">
+			<div class = "row">
+			<div class = "skippy col-xs-12 col-md-4"><button id="skipButton" onclick="skipper()" class="skip-button">Skip (10)</button></div>
+			<div class = "hinter col-xs-12 col-md-4"><button id="seasonHint" onclick="toggleHint()"  class="hint-button">Hint</button></div>
+			<div class = "enterer col-xs-12 col-md-4"><button id="userInputButton" class="enter-button" onclick="checkUserInput()" >Enter</button></div>
+		</div>
+		</div>
 			<p id = "seasonHintText" class = "season-text"></p>
 		</p>
 

@@ -55,11 +55,10 @@ border: 1px solid #FBE301;
 
 .skip-button{
 	color: black;
-
-
 	float: left;
 }
 .hint-button{
+
 	color: black;
 }
 
@@ -86,9 +85,16 @@ border: 1px solid #FBE301;
 	font-size: 20pt;
 
 }
+.hinter{
+	padding-left: 12%;
+
+}
+.hint-button{
+	padding: 12% 25%;
+}
 
 button {
-    padding: 2% 8%;
+    padding: 8% 22%;
     font-family: "Open Sans", sans-serif;
     font-size: 1.3vw;
 		color: black;
@@ -109,4 +115,69 @@ body{
 	background-image: url(Background.jpg);
 	/*background-repeat: no-repeat; */
 	background-attachment: fixed;
+}
+
+@media only screen and (max-width: 991px){
+	.hinter{
+		float: left;
+		padding-left: 42.5%;
+		padding-bottom: 2px;
+	}
+	.skippy{
+		float: left;
+		padding-left: 39%;
+		padding-bottom: 2px;
+	}
+	.enterer{
+		float: left;
+		padding-left: 41.7%;
+		padding-bottom: 2px;
+	}
+	.enter-button{
+		/*padding: 10px 60px; */
+		color: black;
+
+
+		float: left;
+
+	}
+	.hint-button{
+		padding: 4% 12%;
+		font-family: "Open Sans", sans-serif;
+		font-size: 2vw;
+		color: black;
+		border-radius: 5px;
+		border: none;
+		cursor: pointer;
+		background-color: #f7f031;
+	}
+	button {
+	    padding: 4% 12%;
+	    font-family: "Open Sans", sans-serif;
+	    font-size: 2vw;
+			color: black;
+	    border-radius: 5px;
+	    border: none;
+	    cursor: pointer;
+			background-color: #f7f031;
+	}
+
+	.skip-button{
+		color: black;
+
+		float: left;
+	}
+	.search-box {
+	border: 1px solid #FBE301;
+		color: black;
+	    font-size: 18pt;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		padding: 2 0px;
+		height: 56px;
+		width: 100%;
+		border-radius: 42px;
+		outline: none;
+
+	}
 }
