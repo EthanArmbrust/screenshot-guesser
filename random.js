@@ -32,12 +32,16 @@ var score = 0;
 var antiScore = 0;
 var isAnswered = false;
 var hintOn = false;
+var isGameOver = false;
 
 var skips = 10;
 
+document.getElementById("skipButton").disabled = false;
+document.getElementById("seasonHint").disabled = false;
 
 //var sE = "Season " + season.toString() + " Episode " + episode.toString();
 //alert(sE);
+
 
 
 
@@ -63,18 +67,60 @@ function getRandomIntInclusive(min, max){
 
 }
 
+function gameOver(){
+	
+	document.getElementById("skipButton").disabled = true;
+	document.getElementById("seasonHint").disabled = true;
+	
+	
+	 wrongAnswers = "GAME OVER";
+	 document.getElementById("wrongAnswer").innerHTML = wrongAnswers;
+	 isGameOver = true;
+	toggleText("userInputButton");
+	 
+	
+	
+	
+	
+	
+	
+	document.getElementsByTagName("img")[0].setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)");
+	//document.getElementsByTagName("img")[0].style.filter = "grayscale(1)";
+	
+}
+
+function reset(){
+	document.getElementsByTagName("img")[0].setAttribute("style","-webkit-filter:grayscale(" + 0 + "%)");
+	antiScore = 0;
+	wrongAnswers = "";
+	document.getElementById("wrongAnswer").innerHTML = wrongAnswers;
+	isGameOver = false;
+	score = 0;
+	var displayScore = document.getElementById("playerScore");
+		displayScore.innerHTML = score.toString();
+	document.getElementById("skipButton").disabled = false;
+	document.getElementById("seasonHint").disabled = false;
+	skips = 10;
+	var el = document.getElementById("skipButton");
+		el.firstChild.data = "Skip (" + skips + ")";
+		toggleText("userInputButton");
+		displaySiteResponse("");
+		document.getElementById("changeYoPadding").style.paddingTop = "150px";
+		getRandomImage();
+}
 
 
 function checkUserInput(){
         var check = document.getElementById("userEpisode").value;
         //document.write(check);
-
+	var resetNow = true;
 	var responseToUser = "";
 	if(hintOn){
 		toggleHint();
 	}
-
-		if(isAnswered){
+		
+		
+		if(isAnswered && !isGameOver){
 			document.getElementById("userEpisode").value = "";
 			displaySiteResponse("");
 			toggleText("userInputButton");
@@ -85,6 +131,7 @@ function checkUserInput(){
 
 		}
 		else{
+		if(!isGameOver){
 
         if((simplifyString(episodeName) == simplifyString(check)) || (simplifyString(s8e9AltTitle) == simplifyString(check) && season == 8 && episode == 9) || (simplifyString(s8e9AltTitle2) == simplifyString(check) && season == 8 && episode == 9) || (simplifyString(s5e10AltTitle) == simplifyString(check) && season == 5 && episode == 10)){
         responseToUser = "Correct!";
@@ -96,6 +143,7 @@ function checkUserInput(){
 
         }
         else {
+			
 			responseToUser = "Wrong! The correct answer is: " + episodeName;
 			document.getElementById("guessResult").style.color = "#db5755";
 			antiScore++;
@@ -103,6 +151,10 @@ function checkUserInput(){
 			document.getElementById("wrongAnswer").innerHTML = wrongAnswers;
 			document.getElementById("changeYoPadding").style.paddingTop = 0;
 			document.getElementById("wrongAnswer").style.paddingBottom = "53px";
+			if(antiScore == 3){
+			gameOver();
+			resetNow = false;
+		}
 
 
 		}
@@ -116,14 +168,15 @@ function checkUserInput(){
 		document.getElementById("skipButton").disabled = true;
 		document.getElementById("seasonHint").disabled = true;
 
-		if(antiScore == 3){
-			document.write("GAME OVER.  Score: " + score);
-		}
+		
 
 		//giveAnswer = document.createTextNode(responseToUser);
         //docum ent.body.appendChild(giveAnswer);
 
-
+		}
+		}
+		if(isGameOver && resetNow){
+			reset();
 		}
 }
 
@@ -237,13 +290,16 @@ function displaySiteResponse(message){
 function toggleText(button_id)
 {
    var el = document.getElementById(button_id);
-   if (el.firstChild.data == "Enter")
+   if (el.firstChild.data == "Enter" && !isGameOver)
    {
        el.firstChild.data = "Next";
    }
-   else
+   else if(!isGameOver)
    {
      el.firstChild.data = "Enter";
+   }
+   else{
+	   el.firstChild.data = "Restart";
    }
 }
 
@@ -304,4 +360,11 @@ function toggleHint(coinFlip){
 
 	hintOn = !hintOn;
 
+}
+function wait(ms)
+{
+var d = new Date();
+var d2 = null;
+do { d2 = new Date(); }
+while(d2-d < ms);
 }
