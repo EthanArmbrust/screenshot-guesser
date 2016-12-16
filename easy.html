@@ -1,0 +1,100 @@
+<!doctype HTML>
+
+<html>
+	<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesEasy.css">
+	<link rel="stylesheet" type="text/css" href"flexboxgrid.min.css">
+		<h1>The Simpsons Screenshot Guesser</h1>
+	</head>
+
+
+	<body>
+		<div class ="container-fluid">
+		<div class = "row">
+			<div class = "col-xs-12 col-md-6">
+	   <div class="container-responsive">
+			<div class="row">
+
+				<div class="col-xs-12">
+					<p class="image-location" id="imageLocation"></p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+		
+
+
+		<div class = "col-xs-12 col-md-6">
+			<div class = "container-responsive">
+			<div class = "row">
+			<div id = "swapper" class "col-xs-12">
+				<div id ="center-please"></div>
+			
+				<div id ="score-div">
+		<p class="score-text">Score</p>
+		<p id="playerScore" class="player-score">0</p>
+
+		<p id="wrongAnswer" class="wrong-answer"></p>
+	</div>
+		<div id = "search-box-div" >
+		
+		<div class = "container-responsive">
+		<div class = "row">
+		<div class = "col-xs-2 col-md-1"></div>
+		<div class = "col-xs-8 col-md-10">
+
+		<div id = "outer">
+		<div id = "inner">
+		<p class="guess-result" id="guessResult"></p>
+		<p id="changeYoPadding" class="text-box">
+
+					<input type="radio" class="big" name="selection" value="first"><label id ="firstChoice"></label><br>
+					<input type="radio" class="big" name="selection" value="second"><label id ="secondChoice"></label><br>
+					<input type="radio" class="big" name="selection" value="third"><label id ="thirdChoice"></label><br>
+					<input type="radio" class="big" name="selection" value="fourth"><label id ="fourthChoice"></label><br>
+
+
+		</p>
+
+		<p>
+			<div class = "container-responsive">
+			<div class = "row">
+			<div class = "skippy col-xs-12 col-md-4"><button id="skipButton" onclick="skipper()" class="skip-button">Skip (5)</button></div>
+			<div class = "hinter col-xs-12 col-md-4"><button id="seasonHint" onclick="toggleHint()"  class="hint-button">Hint</button></div>
+			<div class = "enterer col-xs-12 col-md-4"><button id="userInputButton" class="enter-button" onclick="checkUserInput()" >Enter</button></div>
+		</div>
+		</div>
+			<p id = "seasonHintText" class = "season-text"></p>
+		</p>
+
+		</div>
+		</div>
+
+	</div>
+	<div class = "col-xs-2 col-md-1"></div>
+	</div>
+	</div>
+
+
+</div>
+	</div>
+			</div>
+			</div>
+</div>
+		</div>
+	</div>
+
+	<script src="randomEasy.js"></script>
+
+
+
+	</body>
+
+
+
+
+</html>
