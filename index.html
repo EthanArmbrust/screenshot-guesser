@@ -29,15 +29,19 @@
 
 
 		<div class = "col-xs-12 col-md-6">
-		<div class = "container-responsive">
+			<div class = "container-responsive">
 			<div class = "row">
-				<div class ="start-md last-xs">
+			<div id = "swapper" class "col-xs-12">
+				<div id ="center-please"></div>
+			
+				<div id ="score-div">
 		<p class="score-text">Score</p>
 		<p id="playerScore" class="player-score">0</p>
 
 		<p id="wrongAnswer" class="wrong-answer"></p>
 	</div>
-<div class = "start-xs last-md">
+		<div id = "search-box-div" >
+		
 		<div class = "container-responsive">
 		<div class = "row">
 		<div class = "col-xs-2 col-md-1"></div>
@@ -45,6 +49,7 @@
 
 		<div id = "outer">
 		<div id = "inner">
+		<p class="guess-result" id="guessResult"></p>
 		<p id="changeYoPadding" class="text-box">
 
 					<input type="text" class="search-box" id="userEpisode" onkeydown="enterCheck(event);" placeholder="Episode Name">
@@ -74,12 +79,13 @@
 
 </div>
 	</div>
-</div>
+			</div>
+			</div>
 </div>
 		</div>
 	</div>
 
-	<p class="guess-result" id="guessResult"></p>
+	
 
 
 

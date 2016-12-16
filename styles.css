@@ -180,4 +180,26 @@ body{
 		outline: none;
 
 	}
+	#swapper{
+		display: table;
+		min-width: 990px;
+		
+	}
+	#score-div{
+		display: table-footer-group;
+	}
+	#search-box-div{
+		display: table-header-group;
+
+		
+	}
+	#search-box-div{
+		display: table-row-group;
+
+		
+	}
+	#changeYoPadding{
+		padding: 0px
+		
+	}
 }
