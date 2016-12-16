@@ -1,0 +1,218 @@
+h1{
+	text-align: center;
+}
+
+img {
+	
+    display: block;
+    margin: 0 auto;
+		padding-left: 0px;
+	width: 100%;
+	height: auto;
+	
+}
+
+
+p {
+	text-align: center;
+	font-size: 20pt;
+}
+.search-box {
+border: 1px solid #FBE301;
+	color: black;
+    font-size: 18pt;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	padding: 0 12px;
+	height: 42px;
+	width: 100%;
+	border-radius: 42px;
+	outline: none;
+
+}
+.text-box{
+	padding-top: 200px;
+	text-align: center;
+	align-items: flex-start;
+}
+.easy{
+	padding-top: 7%;
+	text-align: center;
+	font-size: 24px;
+}
+
+.hard{
+	padding-top: 7%;
+	text-align: center;
+	font-size: 24px;
+}
+
+.enter-button{
+	/*padding: 10px 60px; */
+	color: black;
+
+	float: right;
+
+}
+.score-text{
+	padding-top: 50px;
+	font-size: 40pt;
+
+}
+
+.player-score{
+	padding-top: 20px;
+	font-size:48pt;
+}
+
+.skip-button{
+	color: black;
+	float: left;
+}
+.hint-button{
+
+	color: black;
+}
+
+.wrong-answer{
+	font-size: 72pt;
+	color: #db5755;
+	padding-bottom: 0px;
+}
+
+.guess-result{
+	text-align: center;
+	font-size: 32pt;
+
+
+}
+
+
+.image-location{
+	padding-top: 50px;
+}
+
+.season-text{
+	padding-left: 15px;
+	font-size: 20pt;
+
+}
+.hinter{
+	padding-left: 12%;
+
+}
+.hint-button{
+	padding: 12% 25%;
+}
+
+button {
+    padding: 8% 22%;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.3vw;
+		color: black;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+		background-color: #f7f031;
+}
+
+button:disabled {
+    background-color: #AAAAAA;
+}
+
+
+body{
+	color: black;
+	/*background: linear-gradient(#13212A, #16586F); */
+	background-image: url(Background.jpg);
+	/*background-repeat: no-repeat; */
+	background-attachment: fixed;
+	width: 99%;
+}
+
+@media only screen and (max-width: 991px){
+	.hinter{
+		float: left;
+		padding-left: 42.5%;
+		padding-bottom: 2px;
+	}
+	.skippy{
+		float: left;
+		padding-left: 39%;
+		padding-bottom: 2px;
+	}
+	.enterer{
+		float: left;
+		padding-left: 41.7%;
+		padding-bottom: 2px;
+	}
+	.enter-button{
+		/*padding: 10px 60px; */
+		color: black;
+
+
+		float: left;
+
+	}
+	.hint-button{
+		padding: 4% 12%;
+		font-family: "Open Sans", sans-serif;
+		font-size: 2vw;
+		color: black;
+		border-radius: 5px;
+		border: none;
+		cursor: pointer;
+		background-color: #f7f031;
+	}
+	button {
+	    padding: 4% 12%;
+	    font-family: "Open Sans", sans-serif;
+	    font-size: 2vw;
+			color: black;
+	    border-radius: 5px;
+	    border: none;
+	    cursor: pointer;
+			background-color: #f7f031;
+	}
+
+	.skip-button{
+		color: black;
+
+		float: left;
+	}
+	.search-box {
+	border: 1px solid #FBE301;
+		color: black;
+	    font-size: 18pt;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		padding: 2 0px;
+		height: 56px;
+		width: 100%;
+		border-radius: 42px;
+		outline: none;
+
+	}
+	#swapper{
+		display: table;
+		min-width: 990px;
+		
+	}
+	#score-div{
+		display: table-footer-group;
+	}
+	#search-box-div{
+		display: table-header-group;
+
+		
+	}
+	#search-box-div{
+		display: table-row-group;
+
+		
+	}
+	#changeYoPadding{
+		padding: 0px
+		
+	}
+}
