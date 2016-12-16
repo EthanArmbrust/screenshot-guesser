@@ -116,6 +116,7 @@ body{
 	background-image: url(Background.jpg);
 	/*background-repeat: no-repeat; */
 	background-attachment: fixed;
+	width: 99%;
 }
 
 @media only screen and (max-width: 991px){
