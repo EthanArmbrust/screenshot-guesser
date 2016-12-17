@@ -35,6 +35,11 @@ border: 1px solid #FBE301;
 	text-align: center;
 	align-items: flex-start;
 }
+
+.about-link{
+
+	padding-top: 4%;
+}
 .easy{
 	padding-top: 7%;
 	text-align: center;
