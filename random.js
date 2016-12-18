@@ -68,25 +68,25 @@ function getRandomIntInclusive(min, max){
 }
 
 function gameOver(){
-	
+
 	document.getElementById("skipButton").disabled = true;
 	document.getElementById("seasonHint").disabled = true;
-	
-	
+
+
 	 wrongAnswers = "GAME OVER";
 	 document.getElementById("wrongAnswer").innerHTML = wrongAnswers;
 	 isGameOver = true;
 	toggleText("userInputButton");
-	 
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 	document.getElementsByTagName("img")[0].setAttribute("style","-webkit-filter:grayscale(" + 100 + "%)");
 	//document.getElementsByTagName("img")[0].style.filter = "grayscale(1)";
-	
+
 }
 
 function reset(){
@@ -118,8 +118,8 @@ function checkUserInput(){
 	if(hintOn){
 		toggleHint();
 	}
-		
-		
+
+
 		if(isAnswered && !isGameOver){
 			document.getElementById("userEpisode").value = "";
 			displaySiteResponse("");
@@ -143,7 +143,7 @@ function checkUserInput(){
 
         }
         else {
-			
+
 			responseToUser = "Wrong! The correct answer is: " + episodeName;
 			document.getElementById("guessResult").style.color = "#db5755";
 			antiScore++;
@@ -168,7 +168,7 @@ function checkUserInput(){
 		document.getElementById("skipButton").disabled = true;
 		document.getElementById("seasonHint").disabled = true;
 
-		
+
 
 		//giveAnswer = document.createTextNode(responseToUser);
         //docum ent.body.appendChild(giveAnswer);
@@ -255,9 +255,9 @@ function simplifyString(stringInput){
 	var str = stringInput;
 
 	str = str.replace(/\s+/g, '');
-	str = str.replace(":", "");
-	str = str.replace(".", "");
-	str = str.replace("-", "");
+	str = str.replace(/[:]+/g, '');
+	str = str.replace(/[.]+/g, '');
+	str = str.replace(/[-]+/g, '');
 	str = str.replace(/[{()}]/g, '');
 	str = str.replace(/[,]+/g, "");
 	str = str.replace(/['"]+/g, '');
